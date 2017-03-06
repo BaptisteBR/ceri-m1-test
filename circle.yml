@@ -1,0 +1,12 @@
+language:   java
+
+jdk:
+    - oraclejdk8
+
+script:
+    - mvn clean test continous-integration
+
+general:
+    branches:
+        only:
+            - master
