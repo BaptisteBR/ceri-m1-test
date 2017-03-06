@@ -1,6 +1,9 @@
 package fr.univavignon.pokedex.api;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Rule;
+import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnit;
@@ -16,6 +19,13 @@ public class IPokedexTest {
 		
 		Mockito.when(pokedexMock.size()).thenReturn(151);
 		
-		return null;
+		return pokedexMock;
+	}
+	
+	@Test
+	public void testSize() {
+		
+		assertEquals(getIPokedex().size(), 151);
+		
 	}
 }
