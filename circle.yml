@@ -1,7 +1,6 @@
-language:   java
-
-jdk:
-    - oraclejdk8
+machine:
+    java:
+        version:    oraclejdk8
 
 script:
     - mvn clean test continous-integration
