@@ -4,7 +4,7 @@ machine:
 
 test:
     override:
-        - mvn clean test continous-integration
+        - mvn clean test
 
 general:
     branches:
