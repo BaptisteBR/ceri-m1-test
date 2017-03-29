@@ -67,9 +67,7 @@ public class IPokedexTest {
 		
 		try {
 			
-			int size = getIPokedex().size() + 1;
-			
-			assertEquals(size, getIPokedex().addPokemon(bulbizarre));
+			assertEquals(pokemons.indexOf(bulbizarre), getIPokedex().addPokemon(bulbizarre));
 			
 		}
 		catch (PokedexException e) {
