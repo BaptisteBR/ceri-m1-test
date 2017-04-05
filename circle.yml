@@ -5,6 +5,8 @@ machine:
 test:
     override:
         - mvn clean test
+    post:
+        - export CODACY_PROJECT_TOKEN=273e40c32bb64bca81fbd657c1686943
 
 general:
     branches:
