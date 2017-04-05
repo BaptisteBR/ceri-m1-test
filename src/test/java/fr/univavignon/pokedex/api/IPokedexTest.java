@@ -16,7 +16,11 @@ import org.mockito.stubbing.Answer;
 
 public class IPokedexTest {
 	
-	private final Pokemon bulbizarre = new Pokemon(0, "Bulbizarre", 126, 126, 90, 613, 64, 4000, 4, 0.56);
+	private final Pokemon bulbizarre
+		= new Pokemon(0, "Bulbizarre", 126, 126, 90, 613, 64, 4000, 4, 0.56);
+	
+	private final Pokemon aquali
+		= new Pokemon(133, "Aquali", 186, 168, 260, 2729, 202, 5000, 4, 1);
 	
 	private List<Pokemon> pokemons = new ArrayList<Pokemon>();
 	
@@ -27,6 +31,7 @@ public class IPokedexTest {
 	protected IPokedex getIPokedex() throws PokedexException {
 		
 		Mockito.when(pokedexMock.size()).thenReturn(pokemons.size());
+		
 		Mockito.when(pokedexMock.addPokemon(bulbizarre)).thenAnswer(new Answer<Integer>() {
 
 			@Override
@@ -39,7 +44,24 @@ public class IPokedexTest {
 			}
 			
 		});
+		
+		Mockito.when(pokedexMock.addPokemon(aquali)).then(new Answer<Integer>() {
+
+			@Override
+			public Integer answer(InvocationOnMock invocation) throws Throwable {
+				
+				pokemons.add(aquali);
+				
+				return pokemons.indexOf(aquali);
+				
+			}
+			
+		});
+		
 		Mockito.when(pokedexMock.getPokemon(0)).thenReturn(bulbizarre);
+		
+		Mockito.when(pokedexMock.getPokemon(1)).thenReturn(aquali);
+		
 		Mockito.when(pokedexMock.getPokemons()).thenReturn(pokemons);
 		
 		return pokedexMock;
@@ -71,6 +93,10 @@ public class IPokedexTest {
 			
 			assertEquals(pokemons.indexOf(bulbizarre), index);
 			
+			index = getIPokedex().addPokemon(aquali);
+			
+			assertEquals(pokemons.indexOf(aquali), index);
+			
 		}
 		catch (PokedexException e) {
 			
@@ -87,6 +113,8 @@ public class IPokedexTest {
 			
 			assertEquals(bulbizarre, getIPokedex().getPokemon(0));
 			
+			assertEquals(aquali, getIPokedex().getPokemon(1));
+			
 		}
 		catch (PokedexException e) {
 			
@@ -95,13 +123,19 @@ public class IPokedexTest {
 		}
 		
 	}
-	/*
+	
 	@Test
 	public void testGetPokemons() {
 		
 		try {
 			
-			//assertEquals();
+			assertEquals(pokemons.size(), getIPokedex().getPokemons().size());
+			
+			assertEquals(pokemons.contains(bulbizarre),
+					getIPokedex().getPokemons().contains(bulbizarre));
+			
+			assertEquals(pokemons.contains(aquali),
+					getIPokedex().getPokemons().contains(aquali));
 			
 		}
 		catch (PokedexException e) {
@@ -111,5 +145,5 @@ public class IPokedexTest {
 		}
 		
 	}
-	*/
+	
 }
