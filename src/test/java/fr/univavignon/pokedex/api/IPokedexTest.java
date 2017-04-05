@@ -45,7 +45,7 @@ public class IPokedexTest {
 			
 		});
 		
-		Mockito.when(pokedexMock.addPokemon(aquali)).then(new Answer<Integer>() {
+		Mockito.when(pokedexMock.addPokemon(aquali)).thenAnswer(new Answer<Integer>() {
 
 			@Override
 			public Integer answer(InvocationOnMock invocation) throws Throwable {
