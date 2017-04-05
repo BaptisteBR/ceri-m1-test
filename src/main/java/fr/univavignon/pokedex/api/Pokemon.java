@@ -36,24 +36,24 @@ public final class Pokemon extends PokemonMetadata {
 	 * @param candy Required candy for upgrading this pokemon.
 	 * @param iv IV perfection percentage.
 	 */
-	public Pokemon(
-			final int index,
-			final String name,
-			final int attack,
-			final int defense,
-			final int stamina,
-			final int cp,
-			final int hp,
-			final int dust,
-			final int candy,
+	public Pokemon(//NOPMD
+			final int index,//NOPMD
+			final String name,//NOPMD
+			final int attack,//NOPMD
+			final int defense,//NOPMD
+			final int stamina,//NOPMD
+			final int cp,//NOPMD
+			final int hp,//NOPMD
+			final int dust,//NOPMD
+			final int candy,//NOPMD
 			final double iv) {//NOPMD
-		super(index, name, attack, defense, stamina);
-		this.cp = cp;
-		this.hp = hp;
-		this.dust = dust;
-		this.candy = candy;
-		this.iv = iv;
-	}
+		super(index, name, attack, defense, stamina);//NOPMD
+		this.cp = cp;//NOPMD
+		this.hp = hp;//NOPMD
+		this.dust = dust;//NOPMD
+		this.candy = candy;//NOPMD
+		this.iv = iv;//NOPMD
+	}//NOPMD
 
 	/** Combat Point getter getter. **/
 	public int getCp() {
