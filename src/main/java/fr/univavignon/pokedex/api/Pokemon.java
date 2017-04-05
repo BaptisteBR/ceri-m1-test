@@ -46,7 +46,7 @@ public final class Pokemon extends PokemonMetadata {
 			final int hp,
 			final int dust,
 			final int candy,
-			final double iv) {
+			final double iv) {//NOPMD
 		super(index, name, attack, defense, stamina);
 		this.cp = cp;
 		this.hp = hp;
