@@ -130,13 +130,7 @@ public class IPokedexTest {
 		try {
 			
 			assertEquals(pokemons.size(), getIPokedex().getPokemons().size());
-			
-			assertEquals(pokemons.contains(bulbizarre),
-					getIPokedex().getPokemons().contains(bulbizarre));
-			
-			assertEquals(pokemons.contains(aquali),
-					getIPokedex().getPokemons().contains(aquali));
-			
+						
 		}
 		catch (PokedexException e) {
 			
