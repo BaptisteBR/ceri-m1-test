@@ -14,20 +14,45 @@ import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
 import org.mockito.stubbing.Answer;
 
+/**
+ * 
+ * @author Baptiste
+ *
+ */
 public class IPokedexTest {
 	
+	/**
+	 * 
+	 */
 	private final Pokemon bulbizarre
 		= new Pokemon(0, "Bulbizarre", 126, 126, 90, 613, 64, 4000, 4, 0.56);
 	
+	/**
+	 * 
+	 */
 	private final Pokemon aquali
 		= new Pokemon(133, "Aquali", 186, 168, 260, 2729, 202, 5000, 4, 1);
 	
+	/**
+	 * 
+	 */
 	private List<Pokemon> pokemons = new ArrayList<Pokemon>();
 	
+	/**
+	 * 
+	 */
 	@Mock private IPokedex pokedexMock;
 	
+	/**
+	 * 
+	 */
 	@Rule public MockitoRule mockitoRule = MockitoJUnit.rule();
 	
+	/**
+	 * 
+	 * @return
+	 * @throws PokedexException
+	 */
 	protected IPokedex getIPokedex() throws PokedexException {
 		
 		Mockito.when(pokedexMock.size()).thenReturn(pokemons.size());
@@ -68,6 +93,9 @@ public class IPokedexTest {
 		
 	}
 	
+	/**
+	 * 
+	 */
 	@Test
 	public void testSize() {
 		
@@ -84,6 +112,9 @@ public class IPokedexTest {
 		
 	}
 	
+	/**
+	 * 
+	 */
 	@Test
 	public void testAddPokemon() {
 		
@@ -106,6 +137,9 @@ public class IPokedexTest {
 		
 	}
 	
+	/**
+	 * 
+	 */
 	@Test
 	public void testGetPokemon() {
 		
@@ -124,6 +158,9 @@ public class IPokedexTest {
 		
 	}
 	
+	/**
+	 * 
+	 */
 	@Test
 	public void testGetPokemons() {
 		

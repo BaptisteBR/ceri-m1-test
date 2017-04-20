@@ -9,18 +9,40 @@ import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
 
-public final class IPokemonMetadataProviderTest {
+/**
+ * 
+ * @author Baptiste
+ *
+ */
+public class IPokemonMetadataProviderTest {
 	
+	/**
+	 * 
+	 */
 	private final PokemonMetadata bulbizarreMetadata
 		= new PokemonMetadata(0, "bulbizarre", 126, 126, 90);
 	
+	/**
+	 * 
+	 */
 	private final PokemonMetadata aqualiMetadata
 		= new PokemonMetadata(133, "aquali", 186, 168, 260);
 	
+	/**
+	 * 
+	 */
 	@Mock private IPokemonMetadataProvider pokemonMetadataProviderMock;
 	
+	/**
+	 * 
+	 */
 	@Rule public MockitoRule mockitoRule = MockitoJUnit.rule();
 	
+	/**
+	 * 
+	 * @return
+	 * @throws PokedexException
+	 */
 	protected IPokemonMetadataProvider getIPokemonMetadataProvider() throws PokedexException {
 		
 		Mockito.when(pokemonMetadataProviderMock.getPokemonMetadata(0)).thenReturn(bulbizarreMetadata);
@@ -31,6 +53,9 @@ public final class IPokemonMetadataProviderTest {
 		
 	}
 	
+	/**
+	 * 
+	 */
 	@Test
 	public void testGetPokemonMetadata() {
 		

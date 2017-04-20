@@ -10,32 +10,76 @@ import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
 
+/**
+ * 
+ * @author Baptiste
+ *
+ */
 public class IPokemonTrainerFactoryTest {
 	
+	/**
+	 * 
+	 */
 	private static final String mysticName = "mystic";
 	
+	/**
+	 * 
+	 */
 	private static final String instinctName = "instinct";
 	
+	/**
+	 * 
+	 */
 	private static final String valorName = "valor";
 	
+	/**
+	 * 
+	 */
 	private PokemonTrainer mysticTrainer;
 	
+	/**
+	 * 
+	 */
 	private PokemonTrainer instinctTrainer;
 	
+	/**
+	 * 
+	 */
 	private PokemonTrainer valorTrainer;
 	
+	/**
+	 * 
+	 */
 	@Mock private IPokemonTrainerFactory pokemonTrainerFactoryMock;
 	
+	/**
+	 * 
+	 */
 	@Mock private IPokedexFactory pokedexFactoryMock;
 	
+	/**
+	 * 
+	 */
 	@Mock private IPokedex pokedexMock;
 	
+	/**
+	 * 
+	 */
 	@Mock private IPokemonMetadataProvider pokemonMetadataProviderMock;
 	
+	/**
+	 * 
+	 */
 	@Mock private IPokemonFactory pokemonFactoryMock;
 	
+	/**
+	 * 
+	 */
 	@Rule public MockitoRule mockitoRule = MockitoJUnit.rule();
 	
+	/**
+	 * 
+	 */
 	@Before
 	public void setUp() {
 		
@@ -47,6 +91,10 @@ public class IPokemonTrainerFactoryTest {
 		
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
 	protected IPokedexFactory getIPokedexFactory() {
 		
 		Mockito.when(pokedexFactoryMock.createPokedex(pokemonMetadataProviderMock,
@@ -56,6 +104,10 @@ public class IPokemonTrainerFactoryTest {
 		
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
 	protected IPokemonTrainerFactory getIPokemonTrainerFactory() {
 		
 		Mockito.when(pokemonTrainerFactoryMock.createTrainer(mysticName,
@@ -71,6 +123,9 @@ public class IPokemonTrainerFactoryTest {
 		
 	}
 	
+	/**
+	 * 
+	 */
 	@Test
 	public void testCreateTrainer() {
 		
