@@ -148,6 +148,7 @@ public final class Pokemon extends PokemonMetadata {
 			
 		}
 		
+		
 		return true;
 		
 	}
