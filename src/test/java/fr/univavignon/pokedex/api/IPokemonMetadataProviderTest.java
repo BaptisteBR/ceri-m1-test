@@ -20,13 +20,13 @@ public class IPokemonMetadataProviderTest {
 	 * 
 	 */
 	private final PokemonMetadata bulbizarreMetadata
-		= new PokemonMetadata(0, "bulbizarre", 126, 126, 90);
+		= new PokemonMetadata(1, "Bulbasaur", 126, 126, 90);
 	
 	/**
 	 * 
 	 */
 	private final PokemonMetadata aqualiMetadata
-		= new PokemonMetadata(133, "aquali", 186, 168, 260);
+		= new PokemonMetadata(134, "Vaporeon", 186, 168, 260);
 	
 	/**
 	 * 
