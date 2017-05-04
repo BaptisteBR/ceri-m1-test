@@ -80,16 +80,17 @@ public class PokemonMetadataProvider implements IPokemonMetadataProvider {
 			
 		}
 		
-		try {
+		for (PokemonMetadata metadata : this.listPokemonMetadata) {
 			
-			return this.listPokemonMetadata.get(index);
+			if (metadata.getIndex() == index) {
+				
+				return metadata;
+				
+			}
 			
 		}
-		catch (IndexOutOfBoundsException e) {
-			
-			throw new PokedexException("Index doesn't exist !");
-			
-		}
+		
+		throw new PokedexException("Index doesn't exist !");
 		
 	}
 	
