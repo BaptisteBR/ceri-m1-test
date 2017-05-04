@@ -78,7 +78,7 @@ public class PokemonMetadata {
 			
 		}
 		
-		if (metadata.getName().equals(this.getName())) {
+		if (!metadata.getName().equals(this.getName())) {
 			
 			return false;
 			

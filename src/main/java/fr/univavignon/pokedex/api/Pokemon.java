@@ -80,4 +80,76 @@ public final class Pokemon extends PokemonMetadata {
 		return iv;
 	}
 	
+	/**
+	 * 
+	 */
+	@Override
+	public boolean equals(Object obj) {
+
+		Pokemon pokemon = (Pokemon) obj;
+		
+		if (pokemon.getIndex() != this.getIndex()) {
+			
+			return false;
+			
+		}
+		
+		if (!pokemon.getName().equals(this.getName())) {
+			
+			return false;
+			
+		}
+		
+		if (pokemon.getAttack() != this.getAttack()) {
+			
+			return false;
+			
+		}
+		
+		if (pokemon.getDefense() != this.getDefense()) {
+			
+			return false;
+			
+		}
+		
+		if (pokemon.getStamina() != this.getStamina()) {
+			
+			return false;
+			
+		}
+		
+		if (pokemon.getCp() != this.getCp()) {
+			
+			return false;
+			
+		}
+		
+		if (pokemon.getHp() != this.getHp()) {
+			
+			return false;
+			
+		}
+		
+		if (pokemon.getDust() != this.getDust()) {
+			
+			return false;
+			
+		}
+
+		if (pokemon.getCandy() != this.getCandy()) {
+			
+			return false;
+			
+		}
+
+		if (pokemon.getIv() != this.getIv()) {
+			
+			return false;
+			
+		}
+		
+		return true;
+		
+	}
+	
 }
