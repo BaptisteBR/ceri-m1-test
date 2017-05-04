@@ -34,7 +34,7 @@ public class IPokedexFactoryTest {
 	/**
 	 * 
 	 */
-	@Mock private IPokedex pokedexMock;
+	@Mock private static IPokedex pokedexMock;
 	
 	/**
 	 * 
@@ -47,10 +47,36 @@ public class IPokedexFactoryTest {
 	 */
 	protected IPokedexFactory getIPokedexFactory() {
 		
-		Mockito.when(pokedexFactoryMock.createPokedex(pokemonMetadataProviderMock,
-				pokemonFactoryMock)).thenReturn(pokedexMock);
+		Mockito.when(pokedexFactoryMock.createPokedex(getIPokemonMetadataProvider(),
+				getIPokemonFactory())).thenReturn(getIPokedex());
 		
 		return pokedexFactoryMock;
+		
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	protected IPokedex getIPokedex() {
+		
+		return pokedexMock;
+		
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	protected IPokemonMetadataProvider getIPokemonMetadataProvider() {
+		
+		return pokemonMetadataProviderMock;
+		
+	}
+	
+	protected IPokemonFactory getIPokemonFactory() {
+		
+		return pokemonFactoryMock;
 		
 	}
 	
@@ -60,8 +86,8 @@ public class IPokedexFactoryTest {
 	@Test
 	public void testCreatePokedex() {
 		
-		assertEquals(pokedexMock,
-				getIPokedexFactory().createPokedex(pokemonMetadataProviderMock, pokemonFactoryMock));
+		assertEquals(getIPokedex(),
+				getIPokedexFactory().createPokedex(getIPokemonMetadataProvider(), getIPokemonFactory()));
 		
 	}
 	

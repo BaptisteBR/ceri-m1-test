@@ -14,15 +14,35 @@ public class Pokedex implements IPokedex {
 	/**
 	 * 
 	 */
-	private List<Pokemon> listPokemon = null;
+	private static List<Pokemon> listPokemon = null;
+	
+	/**
+	 * 
+	 */
+	private IPokemonMetadataProvider provider;
+	
+	/**
+	 * 
+	 */
+	private IPokemonFactory factory;
+	
+	/**
+	 * 
+	 * @param provider
+	 * @param factory
+	 */
+	public Pokedex(IPokemonMetadataProvider provider, IPokemonFactory factory) {
+		
+		this.provider = provider;
+		this.factory = factory;
+		
+	}
 
 	/**
 	 * 
 	 */
 	@Override
 	public PokemonMetadata getPokemonMetadata(int index) throws PokedexException {
-		
-		PokemonMetadataProvider provider = new PokemonMetadataProvider();
 		
 		return provider.getPokemonMetadata(index);
 		
@@ -33,8 +53,6 @@ public class Pokedex implements IPokedex {
 	 */
 	@Override
 	public Pokemon createPokemon(int index, int cp, int hp, int dust, int candy) {
-		
-		PokemonFactory factory = new PokemonFactory();
 		
 		return factory.createPokemon(index, cp, hp, dust, candy);
 		
@@ -79,7 +97,7 @@ public class Pokedex implements IPokedex {
 		
 		this.getPokemons().add(pokemon);
 		
-		System.out.println("this.getPokemons().indexOf(pokemon): " + this.getPokemons().indexOf(pokemon));
+		//System.out.println("this.getPokemons().indexOf(pokemon): " + this.getPokemons().indexOf(pokemon));
 		
 		return this.getPokemons().indexOf(pokemon);
 		
@@ -110,13 +128,13 @@ public class Pokedex implements IPokedex {
 	@Override
 	public List<Pokemon> getPokemons() {
 		
-		if (this.listPokemon == null) {
+		if (listPokemon == null) {
 			
-			this.listPokemon = new ArrayList<Pokemon>();
+			listPokemon = new ArrayList<Pokemon>();
 			
 		}
 		
-		return this.listPokemon;
+		return listPokemon;
 		
 	}
 
@@ -131,6 +149,20 @@ public class Pokedex implements IPokedex {
 		pokemons.sort(order);
 		
 		return pokemons;
+		
+	}
+	
+	/**
+	 * 
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		
+		Pokedex pokedex = (Pokedex) obj;
+		
+		
+		
+		return true;
 		
 	}
 

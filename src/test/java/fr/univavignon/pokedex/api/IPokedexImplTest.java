@@ -23,7 +23,9 @@ public class IPokedexImplTest extends IPokedexTest {
 	@BeforeClass
 	public static void init() {
 		
-		pokedex = new Pokedex();
+		PokedexFactory factory = new PokedexFactory();
+		
+		pokedex = factory.createPokedex(new PokemonMetadataProvider(), new PokemonFactory());
 		
 		pokemons = new ArrayList<Pokemon>();
 		
