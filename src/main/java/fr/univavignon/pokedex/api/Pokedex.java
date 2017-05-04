@@ -1,5 +1,6 @@
 package fr.univavignon.pokedex.api;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
@@ -13,7 +14,7 @@ public class Pokedex implements IPokedex {
 	/**
 	 * 
 	 */
-	private IPokemonMetadataProvider pokemonMetadataProvider;
+	private List<Pokemon> listPokemon = null;
 
 	/**
 	 * 
@@ -21,7 +22,9 @@ public class Pokedex implements IPokedex {
 	@Override
 	public PokemonMetadata getPokemonMetadata(int index) throws PokedexException {
 		
-		return pokemonMetadataProvider.getPokemonMetadata(index);
+		PokemonMetadataProvider provider = new PokemonMetadataProvider();
+		
+		return provider.getPokemonMetadata(index);
 		
 	}
 
@@ -30,8 +33,11 @@ public class Pokedex implements IPokedex {
 	 */
 	@Override
 	public Pokemon createPokemon(int index, int cp, int hp, int dust, int candy) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		PokemonFactory factory = new PokemonFactory();
+		
+		return factory.createPokemon(index, cp, hp, dust, candy);
+		
 	}
 
 	/**
@@ -39,8 +45,9 @@ public class Pokedex implements IPokedex {
 	 */
 	@Override
 	public int size() {
-		// TODO Auto-generated method stub
-		return 0;
+
+		return this.getPokemons().size();
+		
 	}
 
 	/**
@@ -48,8 +55,32 @@ public class Pokedex implements IPokedex {
 	 */
 	@Override
 	public int addPokemon(Pokemon pokemon) {
-		// TODO Auto-generated method stub
-		return 0;
+
+		for (int i = 0; i < this.size(); i++) {
+		
+			try {
+				
+				if (this.getPokemon(i) == null) {
+					
+					this.getPokemons().add(pokemon);
+					
+					return i;
+					
+				}
+				
+			}
+			catch (PokedexException e) {
+				
+				e.printStackTrace();
+				
+			}
+			
+		}
+		
+		this.getPokemons().add(this.size(), pokemon);
+		
+		return this.size() - 1;
+		
 	}
 
 	/**
@@ -57,8 +88,18 @@ public class Pokedex implements IPokedex {
 	 */
 	@Override
 	public Pokemon getPokemon(int id) throws PokedexException {
-		// TODO Auto-generated method stub
-		return null;
+		
+		try {
+			
+			return this.getPokemons().get(id);
+			
+		}
+		catch (IndexOutOfBoundsException e) {
+			
+			throw new PokedexException("Index doesn't exist !");
+			
+		}
+
 	}
 
 	/**
@@ -66,8 +107,15 @@ public class Pokedex implements IPokedex {
 	 */
 	@Override
 	public List<Pokemon> getPokemons() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		if (this.listPokemon == null) {
+			
+			this.listPokemon = new ArrayList<Pokemon>();
+			
+		}
+		
+		return this.listPokemon;
+		
 	}
 
 	/**
@@ -75,8 +123,13 @@ public class Pokedex implements IPokedex {
 	 */
 	@Override
 	public List<Pokemon> getPokemons(Comparator<Pokemon> order) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		List<Pokemon> pokemons = this.getPokemons();
+		
+		pokemons.sort(order);
+		
+		return pokemons;
+		
 	}
 
 }
