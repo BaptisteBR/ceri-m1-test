@@ -44,9 +44,9 @@ public class IPokemonFactoryTest {
 	 */
 	protected IPokemonFactory getIPokemonFactory() {
 		
-		Mockito.when(pokemonFactoryMock.createPokemon(0, 613, 64, 4000, 4)).thenReturn(bulbizarre);
+		Mockito.when(pokemonFactoryMock.createPokemon(1, 613, 64, 4000, 4)).thenReturn(bulbizarre);
 		
-		Mockito.when(pokemonFactoryMock.createPokemon(0, 2729, 202, 5000, 4)).thenReturn(aquali);
+		Mockito.when(pokemonFactoryMock.createPokemon(134, 2729, 202, 5000, 4)).thenReturn(aquali);
 		
 		return pokemonFactoryMock;
 		
@@ -58,9 +58,9 @@ public class IPokemonFactoryTest {
 	@Test
 	public void testCreatePokemon() {
 		
-		assertEquals(bulbizarre, getIPokemonFactory().createPokemon(0, 613, 64, 4000, 4));
+		assertEquals(bulbizarre, getIPokemonFactory().createPokemon(1, 613, 64, 4000, 4));
 		
-		assertEquals(aquali, getIPokemonFactory().createPokemon(0, 2729, 202, 5000, 4));
+		assertEquals(aquali, getIPokemonFactory().createPokemon(134, 2729, 202, 5000, 4));
 		
 	}
 	

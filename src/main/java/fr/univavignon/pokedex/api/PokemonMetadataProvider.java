@@ -82,11 +82,13 @@ public class PokemonMetadataProvider implements IPokemonMetadataProvider {
 		
 		System.out.println("this.listPokemonMetadata.size(): " + this.listPokemonMetadata.size());
 		
+		System.out.println("index: " + index);
+		
 		for (PokemonMetadata metadata : this.listPokemonMetadata) {
 			
+			System.out.println("metadata.getIndex(): " + metadata.getIndex());
+			
 			if (metadata.getIndex() == index) {
-				
-				System.out.println("metadata.getIndex(): " + metadata.getIndex());
 				
 				return metadata;
 				

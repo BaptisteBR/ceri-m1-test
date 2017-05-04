@@ -45,9 +45,9 @@ public class IPokemonMetadataProviderTest {
 	 */
 	protected IPokemonMetadataProvider getIPokemonMetadataProvider() throws PokedexException {
 		
-		Mockito.when(pokemonMetadataProviderMock.getPokemonMetadata(0)).thenReturn(bulbizarreMetadata);
+		Mockito.when(pokemonMetadataProviderMock.getPokemonMetadata(1)).thenReturn(bulbizarreMetadata);
 		
-		Mockito.when(pokemonMetadataProviderMock.getPokemonMetadata(133)).thenReturn(aqualiMetadata);
+		Mockito.when(pokemonMetadataProviderMock.getPokemonMetadata(134)).thenReturn(aqualiMetadata);
 		
 		return pokemonMetadataProviderMock;
 		
