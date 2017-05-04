@@ -14,7 +14,7 @@ import org.mockito.junit.MockitoRule;
  * @author Baptiste
  *
  */
-public final class IPokemonFactoryTest {
+public class IPokemonFactoryTest {
 	
 	/**
 	 * 
