@@ -5,6 +5,7 @@ import static org.junit.Assert.assertEquals;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.mockito.Mock;
@@ -24,19 +25,19 @@ public class IPokedexTest {
 	/**
 	 * 
 	 */
-	private final Pokemon bulbizarre
-		= new Pokemon(1, "Bulbasaur", 126, 126, 90, 613, 64, 4000, 4, 0.56);
+	protected final static Pokemon bulbizarre
+		= new Pokemon(1, "Bulbasaur", 126, 126, 90, 613, 64, 4000, 4, 0);
 	
 	/**
 	 * 
 	 */
-	private final Pokemon aquali
-		= new Pokemon(134, "Vaporeon", 186, 168, 260, 2729, 202, 5000, 4, 1);
+	protected final static Pokemon aquali
+		= new Pokemon(134, "Vaporeon", 186, 168, 260, 2729, 202, 5000, 4, 0);
 	
 	/**
 	 * 
 	 */
-	private List<Pokemon> pokemons = new ArrayList<Pokemon>();
+	protected static List<Pokemon> pokemons;
 	
 	/**
 	 * 
@@ -47,6 +48,16 @@ public class IPokedexTest {
 	 * 
 	 */
 	@Rule public MockitoRule mockitoRule = MockitoJUnit.rule();
+	
+	/**
+	 * 
+	 */
+	@BeforeClass
+	public static void init() {
+		
+		pokemons = new ArrayList<Pokemon>();
+		
+	}
 	
 	/**
 	 * 
@@ -97,11 +108,16 @@ public class IPokedexTest {
 	 * 
 	 */
 	@Test
-	public void testSize() {
+	public void testAddPokemon() {
 		
 		try {
 			
-			assertEquals(pokemons.size(), getIPokedex().size());
+			int indexB = getIPokedex().addPokemon(bulbizarre);
+			int indexA = getIPokedex().addPokemon(aquali);
+			
+			assertEquals(pokemons.indexOf(bulbizarre), indexB);
+			
+			assertEquals(pokemons.indexOf(aquali), indexA);
 			
 		}
 		catch (PokedexException e) {
@@ -116,17 +132,11 @@ public class IPokedexTest {
 	 * 
 	 */
 	@Test
-	public void testAddPokemon() {
+	public void testSize() {
 		
 		try {
 			
-			int index = getIPokedex().addPokemon(bulbizarre);
-			
-			assertEquals(pokemons.indexOf(bulbizarre), index);
-			
-			index = getIPokedex().addPokemon(aquali);
-			
-			assertEquals(pokemons.indexOf(aquali), index);
+			assertEquals(pokemons.size(), getIPokedex().size());
 			
 		}
 		catch (PokedexException e) {

@@ -55,31 +55,33 @@ public class Pokedex implements IPokedex {
 	 */
 	@Override
 	public int addPokemon(Pokemon pokemon) {
-
-		for (int i = 0; i < this.size(); i++) {
+		
+		/*
+		for (int i : this.getPokemons().) {
 		
 			try {
 				
-				if (this.getPokemon(i) == null) {
-					
-					this.getPokemons().add(pokemon);
-					
-					return i;
-					
-				}
+				this.getPokemon(i);
 				
 			}
 			catch (PokedexException e) {
 				
-				e.printStackTrace();
+				this.getPokemons().add(i, pokemon);
+				
+				return i;
 				
 			}
 			
-		}
+		}		
+		*/
 		
-		this.getPokemons().add(this.size(), pokemon);
 		
-		return this.size() - 1;
+		
+		this.getPokemons().add(pokemon);
+		
+		System.out.println("this.getPokemons().indexOf(pokemon): " + this.getPokemons().indexOf(pokemon));
+		
+		return this.getPokemons().indexOf(pokemon);
 		
 	}
 

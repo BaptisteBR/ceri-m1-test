@@ -80,13 +80,13 @@ public class PokemonMetadataProvider implements IPokemonMetadataProvider {
 			
 		}
 		
-		System.out.println("this.listPokemonMetadata.size(): " + this.listPokemonMetadata.size());
+		//System.out.println("this.listPokemonMetadata.size(): " + this.listPokemonMetadata.size());
 		
-		System.out.println("index: " + index);
+		//System.out.println("index: " + index);
 		
 		for (PokemonMetadata metadata : this.listPokemonMetadata) {
 			
-			System.out.println("metadata.getIndex(): " + metadata.getIndex());
+			//System.out.println("metadata.getIndex(): " + metadata.getIndex());
 			
 			if (metadata.getIndex() == index) {
 				
@@ -129,7 +129,7 @@ public class PokemonMetadataProvider implements IPokemonMetadataProvider {
 						object.getInt(staminaKey)
 				);
 				
-				System.out.println("metadata.getIndex(): " + metadata.getIndex());
+				//System.out.println("metadata.getIndex(): " + metadata.getIndex());
 					
 				//listMetadata.add(metadata.getIndex(), metadata);
 				listMetadata.add(metadata);

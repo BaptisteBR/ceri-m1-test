@@ -61,9 +61,9 @@ public class IPokemonMetadataProviderTest {
 		
 		try {
 			
-			assertEquals(bulbizarreMetadata, getIPokemonMetadataProvider().getPokemonMetadata(0));
+			assertEquals(bulbizarreMetadata, getIPokemonMetadataProvider().getPokemonMetadata(1));
 			
-			assertEquals(aqualiMetadata, getIPokemonMetadataProvider().getPokemonMetadata(133));
+			assertEquals(aqualiMetadata, getIPokemonMetadataProvider().getPokemonMetadata(134));
 			
 		}
 		catch (PokedexException e) {
