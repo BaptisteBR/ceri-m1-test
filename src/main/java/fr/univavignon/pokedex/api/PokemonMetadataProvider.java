@@ -122,7 +122,8 @@ public class PokemonMetadataProvider implements IPokemonMetadataProvider {
 						object.getInt(staminaKey)
 				);
 					
-				listMetadata.add(metadata.getIndex(), metadata);
+				//listMetadata.add(metadata.getIndex(), metadata);
+				listMetadata.add(metadata);
 				
 			}
 			
