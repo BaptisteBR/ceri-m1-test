@@ -3,6 +3,7 @@ package fr.univavignon.pokedex.api;
 import org.junit.BeforeClass;
 
 /**
+ * Class to test IPokemonTrainerFactory implementation.
  * 
  * @author Baptiste
  *
@@ -10,32 +11,32 @@ import org.junit.BeforeClass;
 public class IPokemonTrainerFactoryImplTest extends IPokemonTrainerFactoryTest {
 
 	/**
-	 * 
+	 * Represents IPokemonMetadataProvider implementation.
 	 */
 	private static IPokemonMetadataProvider pokemonMetadataProvider;
 	
 	/**
-	 * 
+	 * Represents IPokemonFactory implementation.
 	 */
 	private static IPokemonFactory pokemonFactory;
 	
 	/**
-	 * 
+	 * Represents IPokedex implementation.
 	 */
 	private static IPokedex pokedex;
 	
 	/**
-	 * 
+	 * Represents IPokedexFactory implementation.
 	 */
 	private static IPokedexFactory pokedexFactory;
 	
 	/**
-	 * 
+	 * Represents IPokemonTrainerFactory implementation.
 	 */
 	private static IPokemonTrainerFactory pokemonTrainerFactory;
 	
 	/**
-	 * 
+	 * Initialization method.
 	 */
 	@BeforeClass
 	public static void init() {
@@ -59,7 +60,9 @@ public class IPokemonTrainerFactoryImplTest extends IPokemonTrainerFactoryTest {
 	}
 	
 	/**
+	 * Getter of IPokemonMetadataProvider.
 	 * 
+	 * @return Implementation of IPokemonMetadataProvider.
 	 */
 	@Override
 	protected IPokemonMetadataProvider getIPokemonMetadataProvider() {
@@ -69,7 +72,9 @@ public class IPokemonTrainerFactoryImplTest extends IPokemonTrainerFactoryTest {
 	}
 	
 	/**
+	 * Getter of IPokemonFactory.
 	 * 
+	 * @return Implementation of IPokemonFactory.
 	 */
 	@Override
 	protected IPokemonFactory getIPokemonFactory() {
@@ -79,7 +84,9 @@ public class IPokemonTrainerFactoryImplTest extends IPokemonTrainerFactoryTest {
 	}
 	
 	/**
+	 * Getter of IPokedex.
 	 * 
+	 * @return Implementation of IPokedex.
 	 */
 	@Override
 	protected IPokedex getIPokedex() {
@@ -89,7 +96,9 @@ public class IPokemonTrainerFactoryImplTest extends IPokemonTrainerFactoryTest {
 	}
 	
 	/**
+	 * Getter of IPokedexFactory.
 	 * 
+	 * @return Implementation of IPokedexFactory.
 	 */
 	@Override
 	protected IPokedexFactory getIPokedexFactory() {
@@ -99,7 +108,9 @@ public class IPokemonTrainerFactoryImplTest extends IPokemonTrainerFactoryTest {
 	}
 	
 	/**
+	 * Getter of IPokemonTrainerFactory.
 	 * 
+	 * @return Implementation of IPokemonTrainerfactory.
 	 */
 	@Override
 	protected IPokemonTrainerFactory getIPokemonTrainerFactory() {

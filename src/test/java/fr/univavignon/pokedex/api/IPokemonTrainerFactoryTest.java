@@ -11,6 +11,7 @@ import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
 
 /**
+ * Class to test IPokemonTrainerFactory.
  * 
  * @author Baptiste
  *
@@ -18,67 +19,67 @@ import org.mockito.junit.MockitoRule;
 public class IPokemonTrainerFactoryTest {
 	
 	/**
-	 * 
+	 * Static value of team name.
 	 */
 	protected static final String mysticName = "mystic";
 	
 	/**
-	 * 
+	 * Static value of team name.
 	 */
 	protected static final String instinctName = "instinct";
 	
 	/**
-	 * 
+	 * Static value of team name.
 	 */
 	protected static final String valorName = "valor";
 	
 	/**
-	 * 
+	 * Represents a trainer.
 	 */
 	protected static PokemonTrainer mysticTrainer;
 	
 	/**
-	 * 
+	 * Represents a trainer.
 	 */
 	protected static PokemonTrainer instinctTrainer;
 	
 	/**
-	 * 
+	 * Represents a trainer.
 	 */
 	protected static PokemonTrainer valorTrainer;
 	
 	/**
-	 * 
+	 * Represents IPokemonTrainerFactory's Mock.
 	 */
 	@Mock private static IPokemonTrainerFactory pokemonTrainerFactoryMock;
 	
 	/**
-	 * 
+	 * Represents IPokedexFactory"s Mock.
 	 */
 	@Mock private static IPokedexFactory pokedexFactoryMock;
 	
 	/**
-	 * 
+	 * Represents IPokedex's Mock.
 	 */
 	@Mock private static IPokedex pokedexMock;
 	
 	/**
-	 * 
+	 * Represents IPokemonMetadataProvider's Mock.
 	 */
 	@Mock private static IPokemonMetadataProvider pokemonMetadataProviderMock;
 	
 	/**
-	 * 
+	 * Represents IPokemonFactory's Mock.
 	 */
 	@Mock private static IPokemonFactory pokemonFactoryMock;
 	
 	/**
-	 * 
+	 * Define Mockito rule.
 	 */
 	@Rule public MockitoRule mockitoRule = MockitoJUnit.rule();
 	
 	/**
-	 * 
+	 * Initialization method.
 	 */
 	@BeforeClass
 	public static void init() {
@@ -92,8 +93,9 @@ public class IPokemonTrainerFactoryTest {
 	}
 	
 	/**
+	 * Getter of IPokemonFactory.
 	 * 
-	 * @return
+	 * @return Mock of IPokemonFactory.
 	 */
 	protected IPokemonFactory getIPokemonFactory() {
 		
@@ -102,8 +104,9 @@ public class IPokemonTrainerFactoryTest {
 	}
 	
 	/**
+	 * Getter of IPokemonMetadataProvider.
 	 * 
-	 * @return
+	 * @return Mock of IPokemonMetadataProvider.
 	 */
 	protected IPokemonMetadataProvider getIPokemonMetadataProvider() {
 		
@@ -112,8 +115,9 @@ public class IPokemonTrainerFactoryTest {
 	}
 	
 	/**
+	 * Getter of IPokedex.
 	 * 
-	 * @return
+	 * @return Mock of IPokedex.
 	 */
 	protected IPokedex getIPokedex() {
 		
@@ -122,8 +126,9 @@ public class IPokemonTrainerFactoryTest {
 	}
 	
 	/**
+	 * Getter of IPokedexFactory.
 	 * 
-	 * @return
+	 * @return Mock of IPokedexFactory.
 	 */
 	protected IPokedexFactory getIPokedexFactory() {
 		
@@ -135,8 +140,9 @@ public class IPokemonTrainerFactoryTest {
 	}
 	
 	/**
+	 * Getter of IPokemonTrainerFactory.
 	 * 
-	 * @return
+	 * @return Mock of IPokemonTrainerFactory.
 	 */
 	protected IPokemonTrainerFactory getIPokemonTrainerFactory() {
 		
@@ -154,7 +160,7 @@ public class IPokemonTrainerFactoryTest {
 	}
 	
 	/**
-	 * 
+	 * Test of createTrainer method.
 	 */
 	@Test
 	public void testCreateTrainer() {

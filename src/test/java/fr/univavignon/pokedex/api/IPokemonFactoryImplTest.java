@@ -1,6 +1,7 @@
 package fr.univavignon.pokedex.api;
 
 /**
+ * Class to test IPokemonFactory implementation.
  * 
  * @author Baptiste
  *
@@ -8,7 +9,9 @@ package fr.univavignon.pokedex.api;
 public class IPokemonFactoryImplTest extends IPokemonFactoryTest {
 
 	/**
+	 * Getter of IPokemonFactory.
 	 * 
+	 * @return Implementation of IPokemonFactory.
 	 */
 	@Override
 	protected IPokemonFactory getIPokemonFactory() {

@@ -10,6 +10,7 @@ import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
 
 /**
+ * Class to test IPokemonMetadata.
  * 
  * @author Baptiste
  *
@@ -17,31 +18,32 @@ import org.mockito.junit.MockitoRule;
 public class IPokemonMetadataProviderTest {
 	
 	/**
-	 * 
+	 * Static value representing a Pokemon.
 	 */
 	private final PokemonMetadata bulbizarreMetadata
 		= new PokemonMetadata(1, "Bulbasaur", 126, 126, 90);
 	
 	/**
-	 * 
+	 * Static value representing a Pokemon.
 	 */
 	private final PokemonMetadata aqualiMetadata
 		= new PokemonMetadata(134, "Vaporeon", 186, 168, 260);
 	
 	/**
-	 * 
+	 * Represents IPokemonMetadataProvider's Mock.
 	 */
 	@Mock private IPokemonMetadataProvider pokemonMetadataProviderMock;
 	
 	/**
-	 * 
+	 * Define Mockito rule.
 	 */
 	@Rule public MockitoRule mockitoRule = MockitoJUnit.rule();
 	
 	/**
+	 * Getter of IPokemonMetadataProvider.
 	 * 
-	 * @return
-	 * @throws PokedexException
+	 * @throws PokedexException Throws to manage index problem.
+	 * @return Mock of IPokemonMetadataProvider.
 	 */
 	protected IPokemonMetadataProvider getIPokemonMetadataProvider() throws PokedexException {
 		
@@ -54,7 +56,7 @@ public class IPokemonMetadataProviderTest {
 	}
 	
 	/**
-	 * 
+	 * Test of getPokemonMetadata method.
 	 */
 	@Test
 	public void testGetPokemonMetadata() {

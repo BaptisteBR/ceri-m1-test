@@ -10,6 +10,7 @@ import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
 
 /**
+ * Class to test IPokemonFactory.
  * 
  * @author Baptiste
  *
@@ -17,30 +18,31 @@ import org.mockito.junit.MockitoRule;
 public class IPokemonFactoryTest {
 	
 	/**
-	 * 
+	 * Static value representing a Pokemon.
 	 */
 	private static final Pokemon bulbizarre
 		= new Pokemon(1, "Bulbasaur", 126, 126, 90, 613, 64, 4000, 4, 0);
 	
 	/**
-	 * 
+	 * Static value representing a Pokemon.
 	 */
 	private static final Pokemon aquali
 		= new Pokemon(134, "Vaporeon", 186, 168, 260, 2729, 202, 5000, 4, 0);
 	
 	/**
-	 * 
+	 * Represents IPokemonFactory's Mock.
 	 */
 	@Mock private IPokemonFactory pokemonFactoryMock;
 	
 	/**
-	 * 
+	 * Define Mockito rule.
 	 */
 	@Rule public MockitoRule mockitoRule = MockitoJUnit.rule();
 	
 	/**
+	 * Getter of IPokemonFactory.
 	 * 
-	 * @return
+	 * @return Mock of IPokemonFActory.
 	 */
 	protected IPokemonFactory getIPokemonFactory() {
 		
@@ -53,7 +55,7 @@ public class IPokemonFactoryTest {
 	}
 	
 	/**
-	 * 
+	 * Test of createPokemon method.
 	 */
 	@Test
 	public void testCreatePokemon() {

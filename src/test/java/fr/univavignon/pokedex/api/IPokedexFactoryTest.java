@@ -10,6 +10,7 @@ import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
 
 /**
+ * Class to test IPokedexFactory.
  * 
  * @author Baptiste
  *
@@ -17,33 +18,34 @@ import org.mockito.junit.MockitoRule;
 public class IPokedexFactoryTest {
 	
 	/**
-	 * 
+	 * Represents IPokedexFactory's Mock.
 	 */
 	@Mock private IPokedexFactory pokedexFactoryMock;
 	
 	/**
-	 * 
+	 * Represents IPokemonMetadatProvider's Mock.
 	 */
 	@Mock private IPokemonMetadataProvider pokemonMetadataProviderMock;
 	
 	/**
-	 * 
+	 * Represents IPokemonFactory's Mock.
 	 */
 	@Mock private IPokemonFactory pokemonFactoryMock;
 	
 	/**
-	 * 
+	 * Represents IPokedex's Mock.
 	 */
 	@Mock private static IPokedex pokedexMock;
 	
 	/**
-	 * 
+	 * Define Mockito rule.
 	 */
 	@Rule public MockitoRule mockitoRule = MockitoJUnit.rule();
 	
 	/**
+	 * Getter of IPokedexFactory.
 	 * 
-	 * @return
+	 * @return Mock of IPokedexFactory.
 	 */
 	protected IPokedexFactory getIPokedexFactory() {
 		
@@ -55,8 +57,9 @@ public class IPokedexFactoryTest {
 	}
 	
 	/**
+	 * Getter of IPokedex.
 	 * 
-	 * @return
+	 * @return Mock of IPokedex.
 	 */
 	protected IPokedex getIPokedex() {
 		
@@ -65,8 +68,9 @@ public class IPokedexFactoryTest {
 	}
 	
 	/**
+	 * Getter of IPokemonMetadataProvider.
 	 * 
-	 * @return
+	 * @return Mock of IPokemonMetadataProvider.
 	 */
 	protected IPokemonMetadataProvider getIPokemonMetadataProvider() {
 		
@@ -74,6 +78,11 @@ public class IPokedexFactoryTest {
 		
 	}
 	
+	/**
+	 * Getter of IPokemonFactory.
+	 * 
+	 * @return Mock of IPokemonFactory.
+	 */
 	protected IPokemonFactory getIPokemonFactory() {
 		
 		return pokemonFactoryMock;
@@ -81,7 +90,7 @@ public class IPokedexFactoryTest {
 	}
 	
 	/**
-	 * 
+	 * Test of createPokedex method.
 	 */
 	@Test
 	public void testCreatePokedex() {

@@ -6,6 +6,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
+ * Class to test implementation of IPokedex.
  * 
  * @author Baptiste
  *
@@ -13,12 +14,12 @@ import org.junit.Test;
 public class IPokedexImplTest extends IPokedexTest {
 	
 	/**
-	 * 
+	 * Represents IPokedex's implementation.
 	 */
 	private static IPokedex pokedex;
 	
 	/**
-	 * 
+	 * Intialization method.
 	 */
 	@BeforeClass
 	public static void init() {
@@ -32,7 +33,9 @@ public class IPokedexImplTest extends IPokedexTest {
 	}
 
 	/**
+	 * Getter of IPokedex.
 	 * 
+	 * @return Implementation of IPokedex.
 	 */
 	@Override
 	protected IPokedex getIPokedex() throws PokedexException {
@@ -42,7 +45,7 @@ public class IPokedexImplTest extends IPokedexTest {
 	}
 	
 	/**
-	 * 
+	 * Test of addPokemon method.
 	 */
 	@Test
 	@Override

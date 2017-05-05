@@ -16,6 +16,7 @@ import org.mockito.junit.MockitoRule;
 import org.mockito.stubbing.Answer;
 
 /**
+ * Class to test IPokedex.
  * 
  * @author Baptiste
  *
@@ -23,34 +24,34 @@ import org.mockito.stubbing.Answer;
 public class IPokedexTest {
 	
 	/**
-	 * 
+	 * Static value representing a Pokemon.
 	 */
 	protected final static Pokemon bulbizarre
 		= new Pokemon(1, "Bulbasaur", 126, 126, 90, 613, 64, 4000, 4, 0);
 	
 	/**
-	 * 
+	 * Static value representing a Pokemon.
 	 */
 	protected final static Pokemon aquali
 		= new Pokemon(134, "Vaporeon", 186, 168, 260, 2729, 202, 5000, 4, 0);
 	
 	/**
-	 * 
+	 * List of Pokemon.
 	 */
 	protected static List<Pokemon> pokemons;
 	
 	/**
-	 * 
+	 * Represents IPokedex's Mock.
 	 */
 	@Mock private IPokedex pokedexMock;
 	
 	/**
-	 * 
+	 * Define Mockito rule.
 	 */
 	@Rule public MockitoRule mockitoRule = MockitoJUnit.rule();
 	
 	/**
-	 * 
+	 * Initialization method.
 	 */
 	@BeforeClass
 	public static void init() {
@@ -60,9 +61,10 @@ public class IPokedexTest {
 	}
 	
 	/**
+	 * Getter of IPokedex.
 	 * 
-	 * @return
-	 * @throws PokedexException
+	 * @throws PokedexException Throws to manage index error in getPokemon method.
+	 * @return Mock of IPokedex.
 	 */
 	protected IPokedex getIPokedex() throws PokedexException {
 		
@@ -105,7 +107,7 @@ public class IPokedexTest {
 	}
 	
 	/**
-	 * 
+	 * Test of addPokemon method.
 	 */
 	@Test
 	public void testAddPokemon() {
@@ -129,7 +131,7 @@ public class IPokedexTest {
 	}
 	
 	/**
-	 * 
+	 * Test of size method.
 	 */
 	@Test
 	public void testSize() {
@@ -148,7 +150,7 @@ public class IPokedexTest {
 	}
 	
 	/**
-	 * 
+	 * Test of getPokemon method.
 	 */
 	@Test
 	public void testGetPokemon() {
@@ -169,7 +171,7 @@ public class IPokedexTest {
 	}
 	
 	/**
-	 * 
+	 * Test of getPokemons method.
 	 */
 	@Test
 	public void testGetPokemons() {
