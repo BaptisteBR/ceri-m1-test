@@ -5,6 +5,7 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
+ * Pokedex class. Impelments IPokedex interface.
  * 
  * @author Baptiste
  *
@@ -12,24 +13,25 @@ import java.util.List;
 public class Pokedex implements IPokedex {
 	
 	/**
-	 * 
+	 * Store Pokedex's pokemon list.
 	 */
 	private static List<Pokemon> listPokemon = null;
 	
 	/**
-	 * 
+	 * Provider to get Pokemon's metadata.
 	 */
 	private IPokemonMetadataProvider provider;
 	
 	/**
-	 * 
+	 * Factory to create Pokemons.
 	 */
 	private IPokemonFactory factory;
 	
 	/**
+	 * Constructor.
 	 * 
-	 * @param provider
-	 * @param factory
+	 * @param provider Provider to get Pokemon's metadata.
+	 * @param factory Factory to create Pokemons.
 	 */
 	public Pokedex(IPokemonMetadataProvider provider, IPokemonFactory factory) {
 		
@@ -39,7 +41,10 @@ public class Pokedex implements IPokedex {
 	}
 
 	/**
+	 * Get Pokemon's metadata from index.
 	 * 
+	 * @param index Pokemon's index.
+	 * @return Pokemon's metadata got from provider.
 	 */
 	@Override
 	public PokemonMetadata getPokemonMetadata(int index) throws PokedexException {
@@ -49,7 +54,14 @@ public class Pokedex implements IPokedex {
 	}
 
 	/**
+	 * Create a Pokemon from properties.
 	 * 
+	 * @param index Numeric index.
+	 * @param cp Fight level.
+	 * @param hp Life points.
+	 * @param dust Dust points
+	 * @param candy Candies number.
+	 * @return Pokemon created by the factory.
 	 */
 	@Override
 	public Pokemon createPokemon(int index, int cp, int hp, int dust, int candy) {
@@ -59,7 +71,9 @@ public class Pokedex implements IPokedex {
 	}
 
 	/**
+	 * Get size of Pokedex.
 	 * 
+	 * @return Number of Pokemons store in the Pokedex.
 	 */
 	@Override
 	public int size() {
@@ -69,7 +83,10 @@ public class Pokedex implements IPokedex {
 	}
 
 	/**
+	 * Add a Pokemon to the Pokedex.
 	 * 
+	 * @param pokemon Pokemon to add.
+	 * @return Index of added Pokemon.
 	 */
 	@Override
 	public int addPokemon(Pokemon pokemon) {
@@ -93,18 +110,18 @@ public class Pokedex implements IPokedex {
 		}		
 		*/
 		
-		
-		
 		this.getPokemons().add(pokemon);
-		
-		//System.out.println("this.getPokemons().indexOf(pokemon): " + this.getPokemons().indexOf(pokemon));
 		
 		return this.getPokemons().indexOf(pokemon);
 		
 	}
 
 	/**
+	 * Get Pokemon from list index.
 	 * 
+	 * @param id Index to search.
+	 * @throws PokedexException Throws when index doesn't exist.
+	 * @return Pokemon at the specified index.
 	 */
 	@Override
 	public Pokemon getPokemon(int id) throws PokedexException {
@@ -123,7 +140,9 @@ public class Pokedex implements IPokedex {
 	}
 
 	/**
+	 * Retrieve Pokemons list from the Pokedex.
 	 * 
+	 * @return Pokemons list.
 	 */
 	@Override
 	public List<Pokemon> getPokemons() {
@@ -139,7 +158,10 @@ public class Pokedex implements IPokedex {
 	}
 
 	/**
+	 * Retrieve Pokemons list ordered by the comparator.
 	 * 
+	 * @param order Comparator to order the list.
+	 * @return Pokemons list ordered.
 	 */
 	@Override
 	public List<Pokemon> getPokemons(Comparator<Pokemon> order) {
@@ -153,7 +175,10 @@ public class Pokedex implements IPokedex {
 	}
 	
 	/**
+	 * Compare two Pokedex.
 	 * 
+	 * @param obj Pokedex to compare with current.
+	 * @return Indicate if the two Pokedex are equals.
 	 */
 	@Override
 	public boolean equals(Object obj) {

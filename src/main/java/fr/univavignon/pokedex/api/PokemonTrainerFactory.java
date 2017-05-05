@@ -1,6 +1,7 @@
 package fr.univavignon.pokedex.api;
 
 /**
+ * PokemonTrainerFactory class. Implements IPokemonTrainerFactory interface.
  * 
  * @author Baptiste
  *
@@ -8,7 +9,12 @@ package fr.univavignon.pokedex.api;
 public class PokemonTrainerFactory implements IPokemonTrainerFactory {
 
 	/**
+	 * Create a trainer with name, team, and specified Pokemons factory.
 	 * 
+	 * @param name Trainer's name.
+	 * @param team Trainer's team.
+	 * @param pokedexFactory Pokemons factory.
+	 * @return New instance of PokemonTrainer.
 	 */
 	@Override
 	public PokemonTrainer createTrainer(String name, Team team, IPokedexFactory pokedexFactory) {

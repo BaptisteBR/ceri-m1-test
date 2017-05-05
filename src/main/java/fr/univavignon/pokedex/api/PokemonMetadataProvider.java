@@ -12,6 +12,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
+ * PokemonMetadataProvider class. Implements IPokemonMetadataProvider
  * 
  * @author Baptiste
  *
@@ -19,45 +20,52 @@ import org.json.JSONObject;
 public class PokemonMetadataProvider implements IPokemonMetadataProvider {
 	
 	/**
-	 * 
+	 * Path to get metadata list for all Pokemons.
 	 */
 	private static final String url = "https://raw.githubusercontent.com/PokemonGo-Enhanced/node-pokemongo-data/master/data.json";
 	
 	/**
-	 * 
+	 * Key to retrieve Pokemon's numeric index.
 	 */
 	private static final String indexKey = "PkMn";
 	
 	/**
-	 * 
+	 * Key to retrieve Pokemon's name.
 	 */
 	private static final String nameKey = "Identifier";
 	
 	/**
-	 * 
+	 * Key to retrieve Pokemon's attack level.
 	 */
 	private static final String attackKey = "BaseAttack";
 	
 	/**
-	 * 
+	 * Key to retrieve Pokemon's defense level.
 	 */
 	private static final String defenseKey = "BaseDefense";
 	
 	/**
-	 * 
+	 * Key to retrieve Pokemon's stamina.
 	 */
 	private static final String staminaKey = "BaseStamina";
 	
 	/**
-	 * 
+	 * List to store Pokemons metadata.
 	 */
 	private List<PokemonMetadata> listPokemonMetadata = null;
 
 	/**
-	 * 
+	 * Constructor.
 	 */
 	public PokemonMetadataProvider() {}
 	
+	/**
+	 * Get Pokemon metadata from numeric index.
+	 * 
+	 * @param index Numeric index of searched Pokemon.
+	 * @throws PokedexException Exception throws if an error occured.
+	 * @return Pokemon meatadata at the specified index.
+	 */
 	/**{@inheritDoc}}**/
 	@Override
 	public PokemonMetadata getPokemonMetadata(int index) throws PokedexException {
@@ -80,13 +88,7 @@ public class PokemonMetadataProvider implements IPokemonMetadataProvider {
 			
 		}
 		
-		//System.out.println("this.listPokemonMetadata.size(): " + this.listPokemonMetadata.size());
-		
-		//System.out.println("index: " + index);
-		
 		for (PokemonMetadata metadata : this.listPokemonMetadata) {
-			
-			//System.out.println("metadata.getIndex(): " + metadata.getIndex());
 			
 			if (metadata.getIndex() == index) {
 				
@@ -101,7 +103,11 @@ public class PokemonMetadataProvider implements IPokemonMetadataProvider {
 	}
 	
 	/**
+	 * Get list of Pokemon metadata from the web.
 	 * 
+	 * @throws IOException Exception occured when unable to get web response.
+	 * @throws JSONException Exception occured when parse data.
+	 * @return List of Pokemons metadata.
 	 */
 	private List<PokemonMetadata> getFromWeb() {
 		
@@ -128,8 +134,6 @@ public class PokemonMetadataProvider implements IPokemonMetadataProvider {
 						object.getInt(defenseKey),
 						object.getInt(staminaKey)
 				);
-				
-				//System.out.println("metadata.getIndex(): " + metadata.getIndex());
 					
 				//listMetadata.add(metadata.getIndex(), metadata);
 				listMetadata.add(metadata);
@@ -153,9 +157,11 @@ public class PokemonMetadataProvider implements IPokemonMetadataProvider {
 	}
 	
 	/**
+	 * Request data from the web, using URL passed in parameter.
 	 * 
-	 * @param url
-	 * @return
+	 * @param url URL to retrieve JSON data.
+	 * @throws IOException Exception throws when open stream to get data.
+	 * @return Response in string format.
 	 */
 	@SuppressWarnings("deprecation")
 	private String requestDataFromWeb(String url) throws IOException{
