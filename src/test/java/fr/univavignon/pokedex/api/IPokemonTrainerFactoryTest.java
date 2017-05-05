@@ -2,7 +2,7 @@ package fr.univavignon.pokedex.api;
 
 import static org.junit.Assert.assertEquals;
 
-import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.mockito.Mock;
@@ -20,57 +20,57 @@ public class IPokemonTrainerFactoryTest {
 	/**
 	 * 
 	 */
-	private static final String mysticName = "mystic";
+	protected static final String mysticName = "mystic";
 	
 	/**
 	 * 
 	 */
-	private static final String instinctName = "instinct";
+	protected static final String instinctName = "instinct";
 	
 	/**
 	 * 
 	 */
-	private static final String valorName = "valor";
+	protected static final String valorName = "valor";
 	
 	/**
 	 * 
 	 */
-	private PokemonTrainer mysticTrainer;
+	protected static PokemonTrainer mysticTrainer;
 	
 	/**
 	 * 
 	 */
-	private PokemonTrainer instinctTrainer;
+	protected static PokemonTrainer instinctTrainer;
 	
 	/**
 	 * 
 	 */
-	private PokemonTrainer valorTrainer;
+	protected static PokemonTrainer valorTrainer;
 	
 	/**
 	 * 
 	 */
-	@Mock private IPokemonTrainerFactory pokemonTrainerFactoryMock;
+	@Mock private static IPokemonTrainerFactory pokemonTrainerFactoryMock;
 	
 	/**
 	 * 
 	 */
-	@Mock private IPokedexFactory pokedexFactoryMock;
+	@Mock private static IPokedexFactory pokedexFactoryMock;
 	
 	/**
 	 * 
 	 */
-	@Mock private IPokedex pokedexMock;
+	@Mock private static IPokedex pokedexMock;
 	
 	/**
 	 * 
 	 */
-	@Mock private IPokemonMetadataProvider pokemonMetadataProviderMock;
+	@Mock private static IPokemonMetadataProvider pokemonMetadataProviderMock;
 	
 	/**
 	 * 
 	 */
-	@Mock private IPokemonFactory pokemonFactoryMock;
+	@Mock private static IPokemonFactory pokemonFactoryMock;
 	
 	/**
 	 * 
@@ -80,8 +80,8 @@ public class IPokemonTrainerFactoryTest {
 	/**
 	 * 
 	 */
-	@Before
-	public void setUp() {
+	@BeforeClass
+	public static void init() {
 		
 		mysticTrainer = new PokemonTrainer(mysticName, Team.MYSTIC, pokedexMock);
 		
@@ -95,10 +95,40 @@ public class IPokemonTrainerFactoryTest {
 	 * 
 	 * @return
 	 */
+	protected IPokemonFactory getIPokemonFactory() {
+		
+		return pokemonFactoryMock;
+		
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	protected IPokemonMetadataProvider getIPokemonMetadataProvider() {
+		
+		return pokemonMetadataProviderMock;
+		
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	protected IPokedex getIPokedex() {
+		
+		return pokedexMock;
+		
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
 	protected IPokedexFactory getIPokedexFactory() {
 		
-		Mockito.when(pokedexFactoryMock.createPokedex(pokemonMetadataProviderMock,
-				pokemonFactoryMock)).thenReturn(pokedexMock);
+		Mockito.when(pokedexFactoryMock.createPokedex(getIPokemonMetadataProvider(),
+				getIPokemonFactory())).thenReturn(getIPokedex());
 		
 		return pokedexFactoryMock;
 		

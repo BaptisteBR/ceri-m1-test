@@ -160,7 +160,11 @@ public class Pokedex implements IPokedex {
 		
 		Pokedex pokedex = (Pokedex) obj;
 		
-		
+		if (pokedex.size() != this.size()) {
+			
+			return false;
+			
+		}
 		
 		return true;
 		
