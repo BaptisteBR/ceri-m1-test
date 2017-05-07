@@ -10,5 +10,5 @@ Baptiste BRIOT--RIBEYRE
 alternant
 
 Cicrcle CI:
-https://circleci.com/gh/BaptisteBR/ceri-m1-test.svg?style=shield&circle-token=bf592e11896859904c3ddbda5a27493e7f671e89
+[![CircleCI](https://circleci.com/gh/BaptisteBR/ceri-m1-test.svg?style=svg)](https://circleci.com/gh/BaptisteBR/ceri-m1-test)
 
