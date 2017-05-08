@@ -7,6 +7,7 @@ test:
         - mvn clean test
     post:
         - export CODACY_PROJECT_TOKEN=273e40c32bb64bca81fbd657c1686943
+        - mvn com.gavinmogan:codacy-maven-plugin:coverage -DcoverageReportFile=target/site/jacoco/jacoco.xml -DprojectToken=273e40c32bb64bca81fbd657c1686943 -DapiToken=yqn1DlRwLdm8IaTUPk5f
 
 general:
     branches:
